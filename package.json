@@ -1,7 +1,7 @@
 {
-  "name": "react-signature-canvas",
-  "version": "1.1.0-alpha.2",
-  "description": "A React wrapper component around signature_pad. 100% test coverage, types, examples, & more. Unopinionated and heavily updated fork of react-signature-pad",
+  "name": "@hamza65523/react-signature-canvas",
+  "version": "1.0.0",
+  "description": "Fixed React wrapper component for signature_pad with working trim-canvas functionality and signature clear bug fix.",
   "source": "./src/index.tsx",
   "main": "./dist/index.umd.min.js",
   "module": "./dist/index.mjs",
@@ -15,18 +15,15 @@
     "./src/",
     "./dist/"
   ],
-  "author": "Anton Gilgur",
+  "author": "Hamza65523",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/agilgur5/react-signature-canvas",
+  "homepage": "https://github.com/Hamza65523/react-signature-canvas",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agilgur5/react-signature-canvas.git"
+    "url": "https://github.com/Hamza65523/react-signature-canvas.git"
   },
   "bugs": {
-    "url": "https://github.com/agilgur5/react-signature-canvas/issues"
-  },
-  "funding": {
-    "url": "https://github.com/sponsors/agilgur5"
+    "url": "https://github.com/Hamza65523/react-signature-canvas/issues"
   },
   "keywords": [
     "react",
