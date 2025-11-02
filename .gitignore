@@ -2,8 +2,6 @@
 
 # parcel cache
 .parcel-cache/
-# build output
-dist/
 # test coverage output
 coverage/
 
