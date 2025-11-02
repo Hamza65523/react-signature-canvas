@@ -4,6 +4,16 @@
   // allowlist of files to build
   "files": ["src/index.tsx", "types/trim-canvas.d.ts"],
   "compilerOptions": {
+    "importHelpers": true,
+    "typeRoots": ["./typings", "./node_modules/@types"],
+    "target": "ES2018",
+    "lib": ["DOM", "ES2018"],
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     // override the base
     "noEmit": false,
     // don't output JS files, only declarations (Rollup outputs the JS)

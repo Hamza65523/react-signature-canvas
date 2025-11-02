@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import SignaturePad from 'signature_pad'
-import trimCanvas from 'trim-canvas'
+import * as trimCanvasImport from "trim-canvas";
 
 export interface SignatureCanvasProps extends SignaturePad.SignaturePadOptions {
   canvasProps?: React.CanvasHTMLAttributes<HTMLCanvasElement>
@@ -76,17 +76,20 @@ export class SignatureCanvas extends Component<SignatureCanvasProps> {
   }
 
   // return a trimmed copy of the canvas
-  getTrimmedCanvas = (): HTMLCanvasElement => {
+   getTrimmedCanvas = (): HTMLCanvasElement => {
     // copy the canvas
-    const canvas = this.getCanvas()
-    const copy = document.createElement('canvas')
-    copy.width = canvas.width
-    copy.height = canvas.height
+    const canvas = this.getCanvas();
+    const copy = document.createElement("canvas");
+    copy.width = canvas.width;
+    copy.height = canvas.height;
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    copy.getContext('2d')!.drawImage(canvas, 0, 0)
+    copy.getContext("2d")!.drawImage(canvas, 0, 0);
     // then trim it
-    return trimCanvas(copy)
-  }
+    // Handle both CJS and ESM default export forms
+    const trimFn = (trimCanvasImport as any).default || trimCanvasImport;
+
+    return typeof trimFn === "function" ? trimFn(copy) : copy;
+  };
 
   // return the internal SignaturePad reference
   getSignaturePad = (): SignaturePad => {
